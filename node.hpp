@@ -8,15 +8,16 @@ private:
   Node *next = nullptr;
 
 public:
+  Node(T value)
+  {
+    this->value = value;
+    next = nullptr;
+  }
+
   Node(T value, Node *previous)
   {
     this->value = value;
     previous->setNext(this);
-  }
-
-  Node(T value)
-  {
-    this->value = value;
   }
 
   void setNext(Node *next)

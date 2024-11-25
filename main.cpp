@@ -1,4 +1,5 @@
 #include "chainlink.hpp"
+#include "ll.hpp"
 #include "node.hpp"
 #include <iostream>
 
@@ -6,6 +7,7 @@ int main()
 {
   ChainLink link1("red");
   Node node1(&link1);
+  LL linkedlist(&node1);
 
   ChainLink link2("green");
   Node node2(&link2, &node1);
@@ -16,4 +18,5 @@ int main()
   std::cout << node1.displayValue() << std::endl;
   std::cout << node1.getNext()->displayValue() << std::endl;
   std::cout << node2.getNext()->displayValue() << std::endl;
+  std::cout << linkedlist.size<ChainLink *>() << std::endl;
 }
